@@ -59,17 +59,29 @@
 // console.log(isNaN(20))
 
 
-let fruits = ["apple", "banana", "cherry"];
-console.log(fruits); // ["apple", "banana", "cherry"]
-fruits.push("orange");
-console.log(fruits); // ["apple", "banana", "cherry", "orange"]
-let last = fruits.pop();
-console.log(last);    // "orange"
-console.log(fruits);  // ["apple", "banana", "cherry"]
-fruits.unshift("mango");
-console.log(fruits); // ["mango", "apple", "banana", "cherry"]
-let first = fruits.shift();
-console.log(first);   // "mango"
-console.log(fruits);  // ["apple", "banana", "cherry"]
+// let fruits = ["apple", "banana", "cherry"];
+// console.log(fruits.slice(1,2))
+// fruits.push("s","a")
+// console.log(fruits)
+// console.log(fruits.indexOf("a"))
+// console.log(fruits[fruits.length - 1]);
+// console.log(fruits); // ["apple", "banana", "cherry"]
+// fruits.push("orange");
+// console.log(fruits); // ["apple", "banana", "cherry", "orange"]
+// let last = fruits.pop();
+// console.log(last);    // "orange"
+// console.log(fruits);  // ["apple", "banana", "cherry"]
+// fruits.unshift("mango");
+// console.log(fruits); // ["mango", "apple", "banana", "cherry"]
+// let first = fruits.shift();
+// console.log(first);   // "mango"
+// console.log(fruits);  // ["apple", "banana", "cherry"]
 
 
+
+
+let fah = [0,1,2,3,4,5,6]
+
+console.log(fah.slice(2))
+
+const ah = fah.slice(0,2).concat(fah.slice(5))
