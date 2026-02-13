@@ -172,3 +172,52 @@ console.log(c.concat(d))
 
 console.log(c.join(" "))
 ```
+
+```js
+console.log(null == undefined); // true
+
+console.log(null === undefined); // false
+```
+
+- understanding loops 
+
+```js
+let fah = [0,1,2,3,4,5,6]
+
+for(const num of fah){
+  console.log(num)
+}
+
+```
+
+```js 
+
+let num = 0 
+
+while (num < 6){
+  console.log("LOoping")
+  num = num+1
+}
+```
+
+- pure for loop
+
+```js
+for(let num = 0 ; num <5; num++){
+  console.log(num)
+}
+```
+- playing with string 
+
+```js
+let st = "I am Shahnawaz Sazid"
+
+console.log(st.split(" "))
+
+let reverse = ""
+for (const letter of st){
+  reverse = letter+reverse
+}
+
+console.log(reverse)
+```

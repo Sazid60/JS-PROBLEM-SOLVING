@@ -92,10 +92,45 @@
 // console.log(fah.includes(0))
 // console.log(Array.isArray(fah))
 
-let c = ["a","b","c","d"]
+// let c = ["a","b","c","d"]
 
-let d = ["e", "f", "g", "h", "i"]
+// let d = ["e", "f", "g", "h", "i"]
 
-console.log(c.concat(d))
+// console.log(c.concat(d))
 
-console.log(c.join(" "))
+// console.log(c.join(" "))
+
+// console.log(null == undefined); // true
+
+// console.log(null === undefined); // false
+
+// let fah = [0,1,2,3,4,5,6]
+
+// for(const num of fah){
+//   console.log(num)
+// }
+
+// let fah = [0,1,2,3,4,5,6]
+
+// let num = 0 
+
+// while (num < 6){
+//   console.log("LOoping")
+//   num = num+1
+// }
+
+// for(let num = 0 ; num <5; num++){
+//   console.log(num)
+// }
+
+// let st = "I am Shahnawaz Sazid"
+
+// console.log(st.split(" "))
+
+// let reverse = ""
+// for (const letter of st){
+//   reverse = letter+reverse
+// }
+
+// console.log(reverse)
+
