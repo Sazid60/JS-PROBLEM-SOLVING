@@ -278,3 +278,33 @@ const newArr = noDup(array)
 
 console.log(newArr)
 ```
+- some techniques of js 
+
+```js
+const array = [1,1,2,3,4,4,5]
+
+const min = Math.min(...array)
+
+console.log(min)
+
+const max = Math.max(...array)
+
+console.log(max)
+
+console.log(Math.PI)
+
+console.log(Math.abs(1-5))
+
+console.log(Math.round(4.5))
+
+console.log(Math.floor(4.5))
+
+console.log(Math.ceil(4.5))
+
+console.log(Math.random()*10)
+
+console.log(new Date())
+
+const date = new Date()
+console.log(date.getDate())
+```
