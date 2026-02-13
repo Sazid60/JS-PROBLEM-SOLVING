@@ -92,3 +92,50 @@ while (i < 5) {
 math.pow(height,2)
 ```
 
+```js
+console.log(typeof(10%"10"))
+```
+
+```js
+console.log(!true)
+```
+
+```js
+console.log(!"")
+
+console.log(!" ")
+```
+
+```js
+console.log(true + 3)
+
+```
+
+```js
+console.log(true + 3)
+console.log(typeof isNaN)
+console.log(isNaN(20))
+console.log(isNaN("20"))
+console.log(isNaN("ABC"))
+
+```
+
+- exploration of array 
+- push pop shift unshift
+
+```js
+let fruits = ["apple", "banana", "cherry"];
+console.log(fruits); // ["apple", "banana", "cherry"]
+fruits.push("orange");
+console.log(fruits); // ["apple", "banana", "cherry", "orange"]
+let last = fruits.pop();
+console.log(last);    // "orange"
+console.log(fruits);  // ["apple", "banana", "cherry"]
+fruits.unshift("mango");
+console.log(fruits); // ["mango", "apple", "banana", "cherry"]
+let first = fruits.shift();
+console.log(first);   // "mango"
+console.log(fruits);  // ["apple", "banana", "cherry"]
+
+
+```

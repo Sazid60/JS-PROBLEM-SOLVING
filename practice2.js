@@ -37,12 +37,39 @@
 // }
 
 
-let i = 1;
+// let i = 1;
 
-while (i <= 5) {
-  if (i === 4) {
-    break;
-  }
-  console.log(i);
-  i++;
-}
+// while (i <= 5) {
+//   if (i === 4) {
+//     break;
+//   }
+//   console.log(i);
+//   i++;
+// }
+
+
+// console.log(typeof(10%"10"))
+
+// console.log(!"")
+
+// console.log(!" ")
+
+// console.log(typeof isNaN)
+
+// console.log(isNaN(20))
+
+
+let fruits = ["apple", "banana", "cherry"];
+console.log(fruits); // ["apple", "banana", "cherry"]
+fruits.push("orange");
+console.log(fruits); // ["apple", "banana", "cherry", "orange"]
+let last = fruits.pop();
+console.log(last);    // "orange"
+console.log(fruits);  // ["apple", "banana", "cherry"]
+fruits.unshift("mango");
+console.log(fruits); // ["mango", "apple", "banana", "cherry"]
+let first = fruits.shift();
+console.log(first);   // "mango"
+console.log(fruits);  // ["apple", "banana", "cherry"]
+
+
