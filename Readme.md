@@ -221,3 +221,39 @@ for (const letter of st){
 
 console.log(reverse)
 ```
+
+```js
+const person = {
+  name : "sazid",
+  age : 27,
+  profession : "developer",
+  salary : 25000,
+  married : true,
+}
+
+const income = person.salary
+
+// console.log(income)
+
+const keys = Object.keys(person)
+
+console.log(keys)
+
+const values = Object.values(person)
+
+console.log(values)
+```
+
+```js
+const person = {
+  name : "sazid",
+  age : 27,
+  profession : "developer",
+  salary : 25000,
+  married : true,
+}
+
+delete person.age
+
+console.log(person)
+```
