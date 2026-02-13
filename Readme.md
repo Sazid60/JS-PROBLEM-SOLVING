@@ -257,3 +257,24 @@ delete person.age
 
 console.log(person)
 ```
+
+- Remove duplicate 
+
+```js
+
+function noDup(arr){
+  let noDupArray = [];
+  for(arrElm of arr){
+    if(noDupArray.includes(arrElm) === false){
+      noDupArray.push(arrElm)
+    }
+  }
+  return noDupArray
+}
+
+const array = [1,1,2,3,4,4,5]
+
+const newArr = noDup(array)
+
+console.log(newArr)
+```

@@ -134,17 +134,17 @@
 
 // console.log(reverse)
 
-const person = {
-  name : "sazid",
-  age : 27,
-  profession : "developer",
-  salary : 25000,
-  married : true,
-}
+// const person = {
+//   name : "sazid",
+//   age : 27,
+//   profession : "developer",
+//   salary : 25000,
+//   married : true,
+// }
 
-delete person.age
+// delete person.age
 
-console.log(person)
+// console.log(person)
 
 // const income = person.salary
 
@@ -157,3 +157,19 @@ console.log(person)
 // const values = Object.values(person)
 
 // console.log(values)
+
+// function noDup(arr){
+//   let noDupArray = [];
+//   for(arrElm of arr){
+//     if(noDupArray.includes(arrElm) === false){
+//       noDupArray.push(arrElm)
+//     }
+//   }
+//   return noDupArray
+// }
+
+// const array = [1,1,2,3,4,4,5]
+
+// const newArr = noDup(array)
+
+// console.log(newArr)
