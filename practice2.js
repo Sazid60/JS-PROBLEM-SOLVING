@@ -80,8 +80,22 @@
 
 
 
-let fah = [0,1,2,3,4,5,6]
+// let fah = [0,1,2,3,4,5,6]
 
-console.log(fah.slice(2))
+// console.log(fah.slice(2))
 
-const ah = fah.slice(0,2).concat(fah.slice(5))
+// const ah = fah.slice(0,2).concat(fah.slice(5))
+
+// let fah = [0,1,2,3,4,5,6]
+// const a = fah.splice(0,2,100)
+// console.log(fah)
+// console.log(fah.includes(0))
+// console.log(Array.isArray(fah))
+
+let c = ["a","b","c","d"]
+
+let d = ["e", "f", "g", "h", "i"]
+
+console.log(c.concat(d))
+
+console.log(c.join(" "))
