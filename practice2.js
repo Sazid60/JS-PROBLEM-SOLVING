@@ -174,29 +174,52 @@
 
 // console.log(newArr)
 
-const array = [1,1,2,3,4,4,5]
+// const array = [1,1,2,3,4,4,5]
 
-const min = Math.min(...array)
+// const min = Math.min(...array)
 
-console.log(min)
+// console.log(min)
 
-const max = Math.max(...array)
+// const max = Math.max(...array)
 
-console.log(max)
+// console.log(max)
 
-console.log(Math.PI)
+// console.log(Math.PI)
 
-console.log(Math.abs(1-5))
+// console.log(Math.abs(1-5))
 
-console.log(Math.round(4.5))
+// console.log(Math.round(4.5))
 
-console.log(Math.floor(4.5))
+// console.log(Math.floor(4.5))
 
-console.log(Math.ceil(4.5))
+// console.log(Math.ceil(4.5))
 
-console.log(Math.random()*10)
+// console.log(Math.random()*10)
 
-console.log(new Date())
+// console.log(new Date())
 
-const date = new Date()
-console.log(date.getDate())
+// const date = new Date()
+// console.log(date.getDate())
+
+// let a = 5;
+// let b = 7;
+
+// console.log(a, b)
+
+// a = b;
+// b = a;
+
+// console.log(a, b)
+
+
+let a = 5;
+let b = 7;
+
+const temp = a;
+
+a = b;
+
+b = temp;
+
+console.log(a,b)
+

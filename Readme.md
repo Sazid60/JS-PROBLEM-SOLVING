@@ -308,3 +308,31 @@ console.log(new Date())
 const date = new Date()
 console.log(date.getDate())
 ```
+
+- variable swap without temp and destructuring 
+
+```js
+let a = 5;
+let b = 7;
+
+console.log(a, b)
+
+a = b;
+b = a;
+
+console.log(a, b)
+```
+
+```js
+let a = 5;
+let b = 7;
+
+const temp = a;
+
+a = b;
+
+b = temp;
+
+console.log(a,b)
+
+```
