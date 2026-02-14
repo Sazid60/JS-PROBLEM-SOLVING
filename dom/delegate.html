@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Delegation Example</title>
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    #list {
+      background-color: lightblue;
+      padding: 20px;
+      width: 200px;
+    }
+
+    li {
+      background-color: white;
+      margin: 5px 0;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Event Delegation Demo</h2>
+
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <button id="addBtn">Add New Item</button>
+
+  <script>
+    const list = document.getElementById("list");
+    const button = document.getElementById("addBtn");
+
+    // 🔥 Event Delegation: One listener on parent
+    list.addEventListener("click", function(event) {
+
+      console.log("Current Target:", event.currentTarget);
+      console.log("Actual Clicked Element:", event.target);
+
+      // Make sure user clicked on LI only
+      if (event.target.tagName === "LI") {
+        alert("You clicked " + event.target.textContent);
+      }
+    });
+
+    // Add new item dynamically
+    button.addEventListener("click", function() {
+      const newItem = document.createElement("li");
+      newItem.textContent = "New Item";
+      list.appendChild(newItem);
+    });
+
+  </script>
+
+</body>
+</html>

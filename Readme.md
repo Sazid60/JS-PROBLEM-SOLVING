@@ -382,3 +382,153 @@ console.log(a,b)
 </html>
 
 ```
+
+- ANOTHER EXAMPLE OF DOM PROPAGATION 
+
+```HTML
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Event Bubbling Example</title>
+  <style>
+    #parent {
+      padding: 40px;
+      background-color: lightblue;
+    }
+
+    #child {
+      padding: 20px;
+      background-color: coral;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="parent">
+    Parent Div
+    <button id="child">Click Me</button>
+  </div>
+
+  <script>
+    document.getElementById("parent").addEventListener("click", () => {
+      console.log("Parent clicked");
+    });
+
+    document.getElementById("child").addEventListener("click", (event) => {
+      console.log("Child clicked");
+      event.stopPropagation(); // Stops bubbling
+    });
+  </script>
+
+</body>
+</html> -->
+
+<!doctype html>
+<html>
+  <head>
+    <title>stopImmediatePropagation Example</title>
+  </head>
+  <body>
+    <div id="parent" style="padding: 40px; background: lightblue">
+      Parent Div
+      <button id="child" style="padding: 20px">Click Me</button>
+    </div>
+
+    <script>
+      const parent = document.getElementById("parent");
+      const child = document.getElementById("child");
+
+      parent.addEventListener("click", () => {
+        console.log("Parent clicked");
+      });
+
+      // First listener on child
+      child.addEventListener("click", (event) => {
+        console.log("First child listener");
+        //   event.stopImmediatePropagation(); // 👈 Stops everything
+        // event.stopPropagation();
+      });
+
+      // Second listener on child
+      child.addEventListener("click", () => {
+        console.log("Second child listener");
+      });
+    </script>
+  </body>
+</html>
+
+```
+
+- event delegation 
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Delegation Example</title>
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    #list {
+      background-color: lightblue;
+      padding: 20px;
+      width: 200px;
+    }
+
+    li {
+      background-color: white;
+      margin: 5px 0;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Event Delegation Demo</h2>
+
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <button id="addBtn">Add New Item</button>
+
+  <script>
+    const list = document.getElementById("list");
+    const button = document.getElementById("addBtn");
+
+    // 🔥 Event Delegation: One listener on parent
+    list.addEventListener("click", function(event) {
+
+      console.log("Current Target:", event.currentTarget);
+      console.log("Actual Clicked Element:", event.target);
+
+      // Make sure user clicked on LI only
+      if (event.target.tagName === "LI") {
+        alert("You clicked " + event.target.textContent);
+      }
+    });
+
+    // Add new item dynamically
+    button.addEventListener("click", function() {
+      const newItem = document.createElement("li");
+      newItem.textContent = "New Item";
+      list.appendChild(newItem);
+    });
+
+  </script>
+
+</body>
+</html>
+
+```

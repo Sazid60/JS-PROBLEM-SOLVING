@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>Event Bubbling Example</title>
@@ -35,4 +35,38 @@
   </script>
 
 </body>
+</html> -->
+
+<!doctype html>
+<html>
+  <head>
+    <title>stopImmediatePropagation Example</title>
+  </head>
+  <body>
+    <div id="parent" style="padding: 40px; background: lightblue">
+      Parent Div
+      <button id="child" style="padding: 20px">Click Me</button>
+    </div>
+
+    <script>
+      const parent = document.getElementById("parent");
+      const child = document.getElementById("child");
+
+      parent.addEventListener("click", () => {
+        console.log("Parent clicked");
+      });
+
+      // First listener on child
+      child.addEventListener("click", (event) => {
+        console.log("First child listener");
+        //   event.stopImmediatePropagation(); // 👈 Stops everything
+        // event.stopPropagation();
+      });
+
+      // Second listener on child
+      child.addEventListener("click", () => {
+        console.log("Second child listener");
+      });
+    </script>
+  </body>
 </html>
