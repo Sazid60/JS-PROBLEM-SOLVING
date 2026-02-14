@@ -589,3 +589,49 @@ console.log(a,b)
 </html>
 
 ```
+
+- mutable 
+
+```js 
+
+let arr = [1, 2, 3];
+arr.push(4);
+
+console.log(arr); // [1, 2, 3, 4]
+
+```
+
+```js 
+let user = { name: "Shahnawaz" };
+user.name = "Sazid";
+
+console.log(user.name); // Sazid
+
+```
+- immutable 
+```js 
+let str = "Hello";
+str[0] = "Y";
+
+console.log(str); // Hello
+
+```
+
+```js 
+let x = 10;
+let y = x;
+
+y = 20;
+
+console.log(x); // 10
+console.log(y); // 20
+
+```
+
+
+| Feature              | Mutable | Immutable       |
+| -------------------- | ------- | --------------- |
+| Can change original? | ✅ Yes   | ❌ No            |
+| Memory usage         | Less    | More (new copy) |
+| Predictability       | Lower   | Higher          |
+| Used in React        | ❌ Avoid | ✅ Preferred     |
