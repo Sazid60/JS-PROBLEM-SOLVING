@@ -635,3 +635,15 @@ console.log(y); // 20
 | Memory usage         | Less    | More (new copy) |
 | Predictability       | Lower   | Higher          |
 | Used in React        | ❌ Avoid | ✅ Preferred     |
+
+
+- normal function vs arrow function 
+
+| Feature         | Regular Function | Arrow Function |
+| --------------- | ---------------- | -------------- |
+| Syntax          | Longer           | Shorter        |
+| `this`          | Dynamic          | Lexical        |
+| `arguments`     | ✅ Yes            | ❌ No           |
+| Constructor     | ✅ Yes            | ❌ No           |
+| Hoisting        | ✅ Yes            | ❌ No           |
+| Implicit return | ❌ No             | ✅ Yes          |
