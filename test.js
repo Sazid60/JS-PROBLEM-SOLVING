@@ -18,3 +18,18 @@ function findDuplicates(arr) {
 }
 
 console.log(findDuplicates([1, 2, 3, 4, 2, 5, 1]));
+
+
+// Problem 1: Reverse a String (Without Built-in reverse())
+
+function reverseString(str) {
+  let reversed = "";
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+
+  return reversed;
+}
+
+console.log(reverseString("hello"));
