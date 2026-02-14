@@ -532,3 +532,60 @@ console.log(a,b)
 </html>
 
 ```
+
+- capturing vs bubling
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Capturing vs Bubbling</title>
+  <style>
+    #parent {
+      padding: 40px;
+      background-color: lightblue;
+    }
+
+    #child {
+      padding: 20px;
+      background-color: coral;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="parent">
+    Parent Div
+    <button id="child">Click Me</button>
+  </div>
+
+  <script>
+    const parent = document.getElementById("parent");
+    const child = document.getElementById("child");
+
+    // 🔵 CAPTURING (third parameter = true)
+    parent.addEventListener("click", function() {
+      console.log("Parent - Capturing");
+    }, true);
+
+    child.addEventListener("click", function() {
+      console.log("Child - Capturing");
+    }, true);
+
+    // 🔴 BUBBLING (default behavior)
+    parent.addEventListener("click", function() {
+      console.log("Parent - Bubbling");
+    });
+
+    child.addEventListener("click", function() {
+      console.log("Child - Bubbling");
+    });
+
+  </script>
+
+</body>
+</html>
+
+```
