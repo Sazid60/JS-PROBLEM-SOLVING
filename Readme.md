@@ -336,3 +336,49 @@ b = temp;
 console.log(a,b)
 
 ```
+
+- dom understanding 
+
+- event bubbling and stop propagation
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Bubbling Example</title>
+  <style>
+    #parent {
+      padding: 40px;
+      background-color: lightblue;
+    }
+
+    #child {
+      padding: 20px;
+      background-color: coral;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="parent">
+    Parent Div
+    <button id="child">Click Me</button>
+  </div>
+
+  <script>
+    document.getElementById("parent").addEventListener("click", () => {
+      console.log("Parent clicked");
+    });
+
+    document.getElementById("child").addEventListener("click", (event) => {
+      console.log("Child clicked");
+      event.stopPropagation(); // Stops bubbling
+    });
+  </script>
+
+</body>
+</html>
+
+```
