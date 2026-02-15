@@ -212,14 +212,37 @@
 // console.log(a, b)
 
 
-let a = 5;
-let b = 7;
+// let a = 5;
+// let b = 7;
 
-const temp = a;
+// const temp = a;
 
-a = b;
+// a = b;
 
-b = temp;
+// b = temp;
 
-console.log(a,b)
+// console.log(a,b)
 
+
+// const nums = [4,5,6];
+
+// const nums2 = [...nums];
+
+// nums2.push(12)
+
+// console.log(nums)
+// console.log(nums2)
+
+
+
+const person = {
+  name : "sazid",
+  age : 27,
+  profession : "developer",
+  salary : 25000,
+  married : true,
+}
+
+const entries = Object.entries(person)
+
+console.log(entries)

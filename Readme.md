@@ -647,3 +647,22 @@ console.log(y); // 20
 | Constructor     | ✅ Yes            | ❌ No           |
 | Hoisting        | ✅ Yes            | ❌ No           |
 | Implicit return | ❌ No             | ✅ Yes          |
+
+- playing with object 
+
+```js
+const person = {
+  name : "sazid",
+  age : 27,
+  profession : "developer",
+  salary : 25000,
+  married : true,
+}
+
+const entries = Object.entries(person)
+
+console.log(entries)
+
+Object.seal(person)
+Object.freeze(person)
+```
