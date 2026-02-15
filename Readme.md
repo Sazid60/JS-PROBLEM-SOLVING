@@ -968,3 +968,55 @@ for (let value of arr) {
 | Output           | Index/key              | Actual value                       |
 | Syntax advantage | Good for object props  | Good for array/string values       |
 | ES Version       | ES5                    | ES6                                |
+
+#### Difference Between map and forEach in JavaScript
+
+forEach
+
+Purpose: Executes a function for each element without returning anything
+
+Returns: undefined
+
+Use Case: When you want to perform side effects like logging or updating DOM
+
+
+```js 
+const numbers = [1, 2, 3];
+
+numbers.forEach(num => {
+  console.log(num * 2);
+});
+
+// Output:
+// 2
+// 4
+// 6
+
+```
+
+map
+
+Purpose: Transforms each element and returns a new array
+
+Returns: New array of same length
+
+Use Case: When you want a new array based on original array
+
+
+```js 
+
+const numbers = [1, 2, 3];
+
+const doubled = numbers.map(num => num * 2);
+
+console.log(doubled); // [2, 4, 6]
+
+```
+
+| Feature           | forEach               | map                        |
+| ----------------- | --------------------- | -------------------------- |
+| Return Value      | `undefined`           | New array                  |
+| Purpose           | Side effects          | Transforming data          |
+| Chainable         | No                    | Yes                        |
+| Mutates Original? | Depends (can mutate)  | No (creates new array)     |
+| Example Use Case  | Logging, updating DOM | Creating transformed array |
