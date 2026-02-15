@@ -666,3 +666,109 @@ console.log(entries)
 Object.seal(person)
 Object.freeze(person)
 ```
+
+### Questions 
+
+1. what is es6 ? have you ever used anything from es6?
+- let and const Block-scoped variables (better than var).
+```js
+let age = 25;   // can change
+const name = "Sazid"; // cannot change
+
+```
+
+- Arrow Functions (=>) Shorter and cleaner functions.
+
+```js 
+// ES5
+function add(a, b) {
+  return a + b;
+}
+
+// ES6
+const add = (a, b) => a + b;
+
+```
+
+- Template Literals Use backticks for string interpolation.
+
+```js 
+const name = "Sazid";
+console.log(`Hello ${name}`);
+```
+
+- Destructuring Extract values easily from objects/arrays.
+
+```js 
+const user = { name: "Sazid", age: 25 };
+
+const { name, age } = user;
+console.log(name);
+
+```
+
+- Default Parameters Set default values in functions.
+
+```js
+
+const greet = (name = "Guest") => {
+  console.log(`Hello ${name}`);
+};
+
+greet(); // Hello Guest
+
+```
+
+- Spread Operator (...) Copy or merge arrays/objects.
+
+```js
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4];
+
+```
+
+- Rest Parameters Collect multiple arguments into an array.
+
+```js
+const sum = (...numbers) => {
+  return numbers.reduce((a, b) => a + b, 0);
+};
+
+```
+
+- Modules (Import/Export) Used in modern JavaScript apps.
+
+```js
+// math.js
+export const add = (a, b) => a + b;
+
+// main.js
+import { add } from "./math.js";
+
+```
+
+- Classes (OOP) Cleaner syntax for object-oriented programming.
+
+```js 
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  greet() {
+    console.log(`Hi, I'm ${this.name}`);
+  }
+}
+
+```
+
+- Promises (Async Programming)
+
+```js
+const fetchData = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("Done!"), 1000);
+  });
+};
+
+```
