@@ -772,3 +772,199 @@ const fetchData = () => {
 };
 
 ```
+
+- advantages of arrow function
+  1. Implicit Return 
+  2. shorter syntax
+  3. No this Confusion (Lexical this)Biggest advantage Arrow functions do not have their own this. They inherit this from the parent scope.
+
+Problem with normal function:
+
+
+```js 
+const obj = {
+  name: "Sazid",
+  greet: function () {
+    setTimeout(function () {
+      console.log(this.name); // undefined
+    }, 1000);
+  },
+};
+```
+
+Arrow function fix:
+
+```js
+const obj = {
+  name: "Sazid",
+  greet() {
+    setTimeout(() => {
+      console.log(this.name); // Sazid ✅
+    }, 1000);
+  },
+};
+
+```
+
+#### PART 1 — What is this in JavaScript?
+- Simple meaning: this = “Who is calling the function?”
+
+```js 
+
+const obj = {
+  name: "Sazid",
+  sayName() {
+    console.log(this.name);
+  },
+};
+
+obj.sayName();
+
+```
+- obj is calling sayName(), so this = obj
+
+- Example 2 — Function alone
+
+```js 
+function test() {
+  console.log(this);
+}
+test();
+
+```
+- Output (browser): window Because no object called it. so default 
+
+```js 
+this = window (browser)
+this = global (Node)
+
+```
+#### PART 2 — Rule of this
+
+✅ Rule 1
+
+Object calls → this = object
+
+❌ Rule 2
+
+No object → this = global
+
+#### PART 3 — The setTimeout Problem
+
+```js
+const obj = {
+  name: "Sazid",
+  greet() {
+    setTimeout(function () {
+      console.log(this.name);
+    }, 1000);
+  },
+};
+
+```
+
+Why undefined?
+
+Because:
+
+setTimeout runs the function
+
+NOT the object
+
+#### PART 4 — Arrow Function Difference
+
+Normal function:
+
+Creates new this
+
+Arrow function:
+
+❗ Does NOT create this
+
+It borrows from parent.
+
+- What is Lexical Scope?
+Simple meaning:
+
+Scope based on where code is written, not how it’s called.
+
+“Lexical” = related to text/location.
+
+- for this Call decides this in case of normal function
+- Location decides this in case of arrow function 
+
+#### PART 12 — When to Use Arrow Functions
+✅ Use arrow when:
+
+Callbacks
+
+setTimeout
+
+Promises
+
+Array methods (map, filter)
+
+❌ Avoid arrow when:
+
+Object methods
+
+Constructors
+
+Event listeners (sometimes)
+
+#### sTRICT MODE IN JS 
+
+- Strict Mode is a safer way to run JavaScript that catches common mistakes and enforces cleaner coding rules.
+
+#### fOR OF VS FOR IN 
+- FOR IN 
+Iterates over: Keys / Property names of an object or array
+
+Mostly used for: Objects
+
+Output: Index (for arrays) or key (for objects)
+
+```JS 
+const user = { name: "Sazid", age: 25 };
+
+for (let key in user) {
+  console.log(key);        // name, age
+  console.log(user[key]);  // Sazid, 25
+}
+
+```
+
+```JS 
+const arr = [10, 20, 30];
+
+for (let index in arr) {
+  console.log(index);  // 0, 1, 2
+  console.log(arr[index]); // 10, 20, 30
+}
+
+```
+- FOR OF 
+for…of (ES6)
+
+Iterates over: Values of iterable objects (Array, String, Map, Set, etc.)
+
+Mostly used for: Arrays, Strings, Sets, Maps
+
+Output: Actual value
+```JS
+
+const arr = [10, 20, 30];
+
+for (let value of arr) {
+  console.log(value);  // 10, 20, 30
+}
+
+```
+
+| Feature          | for…in                 | for…of                             |
+| ---------------- | ---------------------- | ---------------------------------- |
+| Iterates over    | Keys / property names  | Values                             |
+| Works on         | Objects, Arrays (keys) | Iterables: Array, String, Map, Set |
+| Output           | Index/key              | Actual value                       |
+| Syntax advantage | Good for object props  | Good for array/string values       |
+| ES Version       | ES5                    | ES6                                |

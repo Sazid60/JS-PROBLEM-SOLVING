@@ -235,14 +235,29 @@
 
 
 
-const person = {
-  name : "sazid",
-  age : 27,
-  profession : "developer",
-  salary : 25000,
-  married : true,
+// const person = {
+//   name : "sazid",
+//   age : 27,
+//   profession : "developer",
+//   salary : 25000,
+//   married : true,
+// }
+
+// const entries = Object.entries(person)
+
+// console.log(entries)
+
+// const arr = [10, 20, 30];
+
+// for (let index in arr) {
+//   console.log(index);  // 0, 1, 2
+//   console.log(arr[index]); // 10, 20, 30
+// }
+
+
+const user = { name: "Sazid", age: 25 };
+
+for (let key in user) {
+  console.log(key);        // name, age
+  console.log(user[key]);  // Sazid, 25
 }
-
-const entries = Object.entries(person)
-
-console.log(entries)
