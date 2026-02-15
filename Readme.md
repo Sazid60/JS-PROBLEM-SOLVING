@@ -1020,3 +1020,60 @@ console.log(doubled); // [2, 4, 6]
 | Chainable         | No                    | Yes                        |
 | Mutates Original? | Depends (can mutate)  | No (creates new array)     |
 | Example Use Case  | Logging, updating DOM | Creating transformed array |
+
+
+### Playing with OOP
+
+- To ensure the similarity of similar item class is used 
+
+```js
+class Product {
+    country = 'Bangladesh';
+    speak(talk) {
+        console.log(`Kotha bolo ${talk}`)
+    }
+}
+
+const lenovo = new Product()
+
+lenovo.speak("kisu komu na")
+```
+
+Class = Blueprint / Template
+
+A class is like a cookie cutter.
+
+It defines what a thing has and what it can do.
+
+
+```js
+class Product {
+    country = "Bangladesh"   // every product has this
+    constructor(name) {      // sets the product name
+        this.name = name
+    }
+    speak(talk) {             // product can speak
+        console.log(`Kotha bolo ${talk}`)
+    }
+}
+
+const lenovo = new Product('Lebu');
+
+```
+
+Constructor = First Setup
+
+Constructor is like filling the cookie cutter with dough.
+
+It sets the initial values when you create an object.
+
+```js
+constructor(name) {
+    this.name = name
+}
+
+```
+
+this.name → what this specific object will be called
+
+You pass the name when creating the object:

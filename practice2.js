@@ -255,9 +255,36 @@
 // }
 
 
-const user = { name: "Sazid", age: 25 };
+// const user = { name: "Sazid", age: 25 };
 
-for (let key in user) {
-  console.log(key);        // name, age
-  console.log(user[key]);  // Sazid, 25
+// for (let key in user) {
+//   console.log(key);        // name, age
+//   console.log(user[key]);  // Sazid, 25
+// }
+
+
+// class Product {
+//     country = 'Bangladesh';
+//     speak(talk) {
+//         console.log(`Kotha bolo ${talk}`)
+//     }
+// }
+
+// const lenovo = new Product()
+
+// lenovo.speak("kisu komu na")
+
+
+class Product {
+    country = "Bangladesh"
+    constructor(name) {
+        this.name = name
+    }
+    speak(talk) {
+        console.log(`Kotha bolo ${talk}`)
+    }
 }
+
+const lenovo = new Product('Lebu')
+
+lenovo.speak("kisu komu na")
