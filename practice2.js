@@ -288,3 +288,4 @@ class Product {
 const lenovo = new Product('Lebu')
 
 lenovo.speak("kisu komu na")
+

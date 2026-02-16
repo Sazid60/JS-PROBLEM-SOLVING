@@ -1077,3 +1077,15 @@ constructor(name) {
 this.name → what this specific object will be called
 
 You pass the name when creating the object:
+
+
+- tricks to remember 
+
+```js
+Class = Recipe
+Object = Real food
+Constructor = Naming the food
+this = This specific food
+Method = What food can do
+
+```
