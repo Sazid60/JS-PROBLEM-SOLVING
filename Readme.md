@@ -1087,5 +1087,157 @@ Object = Real food
 Constructor = Naming the food
 this = This specific food
 Method = What food can do
+```
+
+- Understanding inheritance 
+
+```js
+
+class Vehicle {
+    constructor (name,price){
+        this.name = name;
+        this.price = price;
+    }
+    move(){
+        console.log('Gari Moving')
+    }
+}
+
+class Bus extends Vehicle{
+    constructor(name, price,seat,ticketPrice){
+        super(name,price)
+        this.seat = seat;
+        this.ticketPrice = ticketPrice;
+    }
+}
+
+const bus = new Bus('turag', 20000, 40, 200)
+```
+
+- prototypical chain
+
+
+```js 
+
+const person = {
+  talk() {
+    console.log("Talking...");
+  }
+};
+
+const student = {
+  study() {
+    console.log("Studying...");
+  }
+};
+
+// Link student → person
+student.__proto__ = person;
+
+student.study(); // Own method
+student.talk();  // From prototype (person)
 
 ```
+
+```js
+
+class Animal {
+  eat() {
+    console.log("Eating...");
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log("Barking...");
+  }
+}
+
+const myDog = new Dog();
+
+myDog.bark(); // Own method
+myDog.eat();  // From Animal (prototype)
+
+```
+
+- class vs object 
+
+```js
+| Feature    | Class 🧱             | Object 🎯               |
+| ---------- | -------------------- | ----------------------- |
+| Meaning    | Blueprint / template | Instance of class       |
+| Real data  | ❌ No                 | ✅ Yes                   |
+| Memory use | Once                 | Multiple instances      |
+| Created by | `class` keyword      | `new` keyword           |
+| Example    | `class Car {}`       | `const car = new Car()` |
+
+```
+
+- ternary vs optional chaining
+
+| Feature  | Optional Chaining (`?.`) | Ternary Operator (`? :`) |
+| -------- | ------------------------ | ------------------------ |
+| Purpose  | Prevent errors           | Conditional logic        |
+| Works on | Objects/properties       | Any condition            |
+| Returns  | `undefined` if missing   | One of two values        |
+| Replaces | Null checks              | if/else                  |
+
+| Feature    | Global Scope 🌍  | Block Scope 📦 |
+| ---------- | ---------------- | -------------- |
+| Accessible | Everywhere       | Only inside {} |
+| Keywords   | var, let, const  | let, const     |
+| Risk       | High (conflicts) | Safer          |
+
+- pass by value 
+
+```js
+let a = 10;
+
+function change(x) {
+  x = 20;
+}
+
+change(a);
+
+console.log(a); // 10 (unchanged)
+
+```
+
+- pass by reference 
+
+```js 
+let obj = { name: "Sazid" };
+
+function change(o) {
+  o.name = "Ali";
+}
+
+change(obj);
+
+console.log(obj.name); // Ali
+
+```
+
+| Feature           | Pass by Value 🔢 | Pass by Reference 📦 |
+| ----------------- | ---------------- | -------------------- |
+| Data type         | Primitives       | Objects, Arrays      |
+| Copy or link      | Copy             | Memory reference     |
+| Affects original? | ❌ No             | ✅ Yes                |
+| Example           | number, string   | object, array        |
+
+
+Scope → Where variables live
+
+Global → Accessible everywhere
+
+Block → Inside {}
+
+Hoisting → Declarations move to top
+
+Closure → Function remembers outer variables
+
+Callback → Function passed to another function
+
+Pass by value → Copy
+
+Pass by reference → Memory link

@@ -275,17 +275,76 @@
 // lenovo.speak("kisu komu na")
 
 
-class Product {
-    country = "Bangladesh"
-    constructor(name) {
-        this.name = name
-    }
-    speak(talk) {
-        console.log(`Kotha bolo ${talk}`)
-    }
+// class Product {
+//     country = "Bangladesh"
+//     constructor(name) {
+//         this.name = name
+//     }
+//     speak(talk) {
+//         console.log(`Kotha bolo ${talk}`)
+//     }
+// }
+
+// const lenovo = new Product('Lebu')
+
+// lenovo.speak("kisu komu na")
+
+
+// class Vehicle {
+//     constructor (name,price){
+//         this.name = name;
+//         this.price = price;
+//     }
+//     move(){
+//         console.log('Gari Moving')
+//     }
+// }
+
+// class Bus extends Vehicle{
+//     constructor(name, price,seat,ticketPrice){
+//         super(name,price)
+//         this.seat = seat;
+//         this.ticketPrice = ticketPrice;
+//     }
+// }
+
+// const bus = new Bus('turag', 20000, 40, 200)
+
+function outer() {
+  let count = 0;
+
+  return function inner() {
+    count++;
+    console.log(count);
+  };
 }
 
-const lenovo = new Product('Lebu')
+const fn = outer();
 
-lenovo.speak("kisu komu na")
+fn(); // 1
+fn(); // 2
+
+
+function greet(name, callback) {
+  console.log("Hello " + name);
+  callback();
+}
+
+function done() {
+  console.log("Done!");
+}
+
+greet("Sazid", done);
+
+
+let a = 10;
+
+function change(x) {
+  x = 20;
+}
+
+change(a);
+
+console.log(a); // 10 (unchanged)
+
 
