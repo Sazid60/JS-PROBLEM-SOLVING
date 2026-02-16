@@ -310,41 +310,44 @@
 
 // const bus = new Bus('turag', 20000, 40, 200)
 
-function outer() {
-  let count = 0;
+// function outer() {
+//   let count = 0;
 
-  return function inner() {
-    count++;
-    console.log(count);
-  };
-}
+//   return function inner() {
+//     count++;
+//     console.log(count);
+//   };
+// }
 
-const fn = outer();
+// const fn = outer();
 
-fn(); // 1
-fn(); // 2
-
-
-function greet(name, callback) {
-  console.log("Hello " + name);
-  callback();
-}
-
-function done() {
-  console.log("Done!");
-}
-
-greet("Sazid", done);
+// fn(); // 1
+// fn(); // 2
 
 
-let a = 10;
+// function greet(name, callback) {
+//   console.log("Hello " + name);
+//   callback();
+// }
 
-function change(x) {
-  x = 20;
-}
+// function done() {
+//   console.log("Done!");
+// }
 
-change(a);
-
-console.log(a); // 10 (unchanged)
+// greet("Sazid", done);
 
 
+// let a = 10;
+
+// function change(x) {
+//   x = 20;
+// }
+
+// change(a);
+
+// console.log(a); // 10 (unchanged)
+
+
+console.log(a); // undefined
+var a = 10;
+console.log(a); // 10

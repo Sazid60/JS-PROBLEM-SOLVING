@@ -1241,3 +1241,50 @@ Callback → Function passed to another function
 Pass by value → Copy
 
 Pass by reference → Memory link
+
+- Check if array or not 
+
+```js
+const arr = [1, 2, 3];
+
+console.log(Array.isArray(arr)); // true
+
+```
+
+- implicit conversion
+
+| Operation               | Conversion Type                  | Example         |
+| ----------------------- | -------------------------------- | --------------- |
+| `+` with string         | Number → String                  | 5 + "5" → "55"  |
+| `-`, `*`, `/`           | String → Number                  | "10" * 2 → 20   |
+| `if` or Boolean context | Any type → Boolean               | "" → false      |
+| Comparison (`==`)       | JS tries to convert to same type | "5" == 5 → true |
+
+| Variable Type                                                        | Passed As                  | Effect Inside Function           |
+| -------------------------------------------------------------------- | -------------------------- | -------------------------------- |
+| Primitive (number, string, boolean, null, undefined, symbol, bigint) | Value (copy)               | Original variable unchanged      |
+| Non-primitive (object, array, function)                              | Reference (memory address) | Original variable can be changed |
+
+- hoisting with var 
+
+```js 
+console.log(a); // undefined
+var a = 10;
+console.log(a); // 10
+
+```
+
+```js
+var a;          // declaration hoisted
+console.log(a); // undefined
+a = 10;         // assignment happens here
+console.log(a); // 10
+```
+| Feature                           | Hoisted?       | Initialized? | Can use before declaration? |
+| --------------------------------- | -------------- | ------------ | --------------------------- |
+| `var`                             | Yes            | undefined    | ✅ undefined                 |
+| `let`                             | Yes            | ❌ No (TDZ)   | ❌ ReferenceError            |
+| `const`                           | Yes            | ❌ No (TDZ)   | ❌ ReferenceError            |
+| Function declaration              | Yes            | Yes          | ✅ Yes                       |
+| Function expression (`var`)       | Yes (variable) | undefined    | ❌ TypeError                 |
+| Function expression (`let/const`) | Yes (variable) | TDZ          | ❌ ReferenceError            |
