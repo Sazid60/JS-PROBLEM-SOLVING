@@ -1288,3 +1288,10 @@ console.log(a); // 10
 | Function declaration              | Yes            | Yes          | ✅ Yes                       |
 | Function expression (`var`)       | Yes (variable) | undefined    | ❌ TypeError                 |
 | Function expression (`let/const`) | Yes (variable) | TDZ          | ❌ ReferenceError            |
+
+
+| Lifecycle Phase | Class Component Method | useEffect Equivalent          |
+| --------------- | ---------------------- | ----------------------------- |
+| Mounting        | `componentDidMount`    | `useEffect(() => {}, [])`     |
+| Updating        | `componentDidUpdate`   | `useEffect(() => {}, [deps])` |
+| Unmounting      | `componentWillUnmount` | `return () => { ... }`        |
