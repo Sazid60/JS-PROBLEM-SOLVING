@@ -1331,3 +1331,145 @@ console.log(calculate(5, 3, add));
 | --------------------- | ---------------------------------------- |
 | Callback              | Function passed into another function    |
 | Higher-Order Function | Function that takes or returns functions |
+
+- call bind and this 
+
+| Method  | Calls function immediately? | Arguments format |
+| ------- | --------------------------- | ---------------- |
+| call()  | ✅ Yes                       | Comma separated  |
+| apply() | ✅ Yes                       | Array            |
+| bind()  | ❌ No (returns new function) | Comma separated  |
+
+- Why do we need them?
+
+Sometimes this points to the wrong object. call/apply/bind to manually set this
+
+- base example 
+
+```js 
+const person1 = {
+  name: "Sazid"
+};
+
+const person2 = {
+  name: "Rahim"
+};
+
+function greet(city) {
+  console.log(`Hi I am ${this.name} from ${city}`);
+}
+
+// 1️⃣ call()
+// 👉 Calls function immediately
+// 👉 Arguments passed normally
+
+greet.call(person1, "Dhaka");
+greet.call(person2, "Chittagong");
+
+
+
+
+// 2️⃣ apply()
+
+// 👉 Same as call
+// 👉 But arguments in array
+
+greet.apply(person1, ["Dhaka"]);
+greet.apply(person2, ["Sylhet"]);
+
+
+// 3️⃣ bind()
+
+// 👉 Does NOT call immediately
+// 👉 Returns a new function
+
+const newFunc = greet.bind(person1, "Dhaka");
+newFunc(); // called later
+
+```
+
+| Use Case                   | Method     |
+| -------------------------- | ---------- |
+| Immediate execution        | call/apply |
+| Arguments already in array | apply      |
+| Reusable function          | bind       |
+| React event handlers       | bind       |
+
+| Feature        | Callback Hell   | Promise Hell           |
+| -------------- | --------------- | ---------------------- |
+| Based on       | Callbacks       | Promises               |
+| Shape          | Pyramid nesting | Long chains            |
+| Error handling | Very hard       | Slightly better        |
+| Readability    | Worst           | Better but still messy |
+
+
+- promise 
+
+```js 
+const myPromise = new Promise((resolve, reject) => {
+  let success = true;
+
+  if (success) {
+    resolve("Task completed!");
+  } else {
+    reject("Task failed!");
+  }
+});
+
+
+myPromise
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+
+```
+
+- SHALLOW COPY AND DEEP COPY 
+
+```JS 
+
+const original = {
+  name: "Sazid",
+  address: {
+    city: "Dhaka"
+  }
+};
+
+const copy = { ...original }; // shallow copy
+
+copy.name = "Rahim";
+copy.address.city = "Sylhet";
+
+console.log(original.name); // Sazid ✅
+console.log(original.address.city); // Sylhet ❌ changed!
+
+```
+
+```
+original.address ─┐
+                  ├── same object
+copy.address  ───┘
+
+```
+
+```JS
+const original = {
+  name: "Sazid",
+  address: {
+    city: "Dhaka"
+  }
+};
+
+const deepCopy = structuredClone(original);
+
+deepCopy.address.city = "Sylhet";
+
+console.log(original.address.city); // Dhaka ✅ unchanged
+
+```
+
+| Feature              | Shallow Copy | Deep Copy    |
+| -------------------- | ------------ | ------------ |
+| Nested objects       | Shared       | Fully copied |
+| Memory               | Less         | More         |
+| Speed                | Faster       | Slower       |
+| Safe for nested data | ❌ No         | ✅ Yes        |
