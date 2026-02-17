@@ -1295,3 +1295,39 @@ console.log(a); // 10
 | Mounting        | `componentDidMount`    | `useEffect(() => {}, [])`     |
 | Updating        | `componentDidUpdate`   | `useEffect(() => {}, [deps])` |
 | Unmounting      | `componentWillUnmount` | `return () => { ... }`        |
+- 
+- 1. What is the Higher Order function & callback function in JavaScript? ANSWER WITH EXAMPLE
+
+- callback 
+```JS
+function greet(name, callback) {
+  console.log("Hello " + name);
+  callback(); // calling the callback
+}
+
+function sayBye() {
+  console.log("Goodbye!");
+}
+
+greet("Sazid", sayBye);
+
+```
+- Higher order function 
+
+```js 
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+console.log(calculate(5, 3, add));
+
+```
+
+| Concept               | Meaning                                  |
+| --------------------- | ---------------------------------------- |
+| Callback              | Function passed into another function    |
+| Higher-Order Function | Function that takes or returns functions |
