@@ -1473,3 +1473,224 @@ console.log(original.address.city); // Dhaka ✅ unchanged
 | Memory               | Less         | More         |
 | Speed                | Faster       | Slower       |
 | Safe for nested data | ❌ No         | ✅ Yes        |
+
+
+| Feature         | relative | absolute                  | fixed    | sticky              |
+| --------------- | -------- | ------------------------- | -------- | ------------------- |
+| In normal flow  | ✅ Yes    | ❌ No                      | ❌ No     | ✅ Initially         |
+| Reference point | Itself   | Nearest positioned parent | Viewport | Scroll position     |
+| Moves on scroll | Yes      | Yes                       | ❌ No     | Sticks after scroll |
+| Space reserved  | ✅ Yes    | ❌ No                      | ❌ No     | ✅ Yes               |
+
+
+| Feature     | Class Component                           | Functional Component with Hooks   |
+| ----------- | ----------------------------------------- | --------------------------------- |
+| Syntax      | ES6 class                                 | JavaScript function               |
+| State       | `this.state` + `this.setState`            | `useState` hook                   |
+| Lifecycle   | `componentDidMount`, `componentDidUpdate` | `useEffect` hook                  |
+| `this`      | Required (binding)                        | Not needed                        |
+| Readability | Verbose                                   | Cleaner, concise                  |
+| Performance | Slightly slower (older React versions)    | Slightly faster (modern React)    |
+| Reusability | Harder to share logic                     | Hooks allow custom reusable logic |
+
+
+| Type           | Meaning                           | Example                      |
+| -------------- | --------------------------------- | ---------------------------- |
+| Pseudo-class   | Element **state**                 | `:hover`, `:first-child`     |
+| Pseudo-element | Part of element or insert content | `::before`, `::first-letter` |
+
+
+| Method  | Horizontal                | Vertical              | Notes                                                  |
+| ------- | ------------------------- | --------------------- | ------------------------------------------------------ |
+| Flexbox | `justify-content: center` | `align-items: center` | Good for 1D layout (row or column)                     |
+| Grid    | `justify-items: center`   | `align-items: center` | Works for 2D layout; shorthand → `place-items: center` |
+
+
+| Dependency Array | When effect runs                                                     |
+| ---------------- | -------------------------------------------------------------------- |
+| `[]`             | Only once, after first render (componentDidMount)                    |
+| `[dep1, dep2]`   | Runs **after first render and whenever dep1 or dep2 changes**        |
+| omitted          | Runs **after every render** (componentDidMount + componentDidUpdate) |
+
+
+| Feature               | useState                  | useReducer                              |
+| --------------------- | ------------------------- | --------------------------------------- |
+| Complexity            | Simple state              | Complex state logic                     |
+| Update                | Direct setter function    | Reducer function + action               |
+| Multiple state values | Multiple `useState` calls | One state object handled by reducer     |
+| Readability           | Simple for few values     | Better for many interdependent states   |
+| Debugging             | Easy for small apps       | Easier with predictable reducer pattern |
+
+| Technique     | Use Case                                                      |
+| ------------- | ------------------------------------------------------------- |
+| `React.memo`  | Memoize **component** to prevent re-render if props unchanged |
+| `useCallback` | Memoize **functions** passed as props to children             |
+| Both together | Optimize **parent → child re-render chains**                  |
+
+
+| Feature      | Local Storage                                           | Session Storage                                      | Cookies                                                     |
+| ------------ | ------------------------------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------- |
+| Storage size | ~5–10 MB                                                | ~5 MB                                                | ~4 KB                                                       |
+| Expiration   | No expiration; persists until manually cleared          | Expires when browser/tab closes                      | Set via `Expires` or `Max-Age`; can persist across sessions |
+| Scope        | Shared across all tabs/windows of same origin           | Only accessible in the tab/window that created it    | Sent to server with every request (optional)                |
+| Access       | JavaScript only                                         | JavaScript only                                      | JavaScript (`document.cookie`) + server                     |
+| Use case     | Store long-term data (e.g., theme, preferences, tokens) | Temporary data for current session (e.g., form data) | Authentication, session tracking, server-side reading       |
+
+- express life cycle
+
+```
+Client Request
+       ↓
+Application-Level Middleware
+       ↓
+Router-Level Middleware
+       ↓
+Route Handler
+       ↓
+Response Sent
+       ↓
+Error-Handling Middleware (if any)
+
+```
+
+- handling error
+
+```
+Route or Middleware throws error
+          ↓
+Call next(err)
+          ↓
+Error-handling middleware (err, req, res, next)
+          ↓
+Send response to client
+
+```
+
+- child thread vs worker thread 
+
+| Feature           | Child Process                           | Worker Thread                           |
+| ----------------- | --------------------------------------- | --------------------------------------- |
+| Separate process? | Yes                                     | No, same process                        |
+| Communication     | IPC messages                            | `parentPort` messages                   |
+| Use case          | Running separate scripts, external apps | CPU-heavy JS tasks                      |
+| Overhead          | Higher (separate process)               | Lower (threads)                         |
+| Memory            | Separate memory                         | Shared memory with transferable objects |
+
+- advantage of express over node 
+
+| Reason                 | Explanation                                         |
+| ---------------------- | --------------------------------------------------- |
+| **Simplified Routing** | Define routes easily with `app.get/post/put/delete` |
+| **Middleware Support** | Add logging, auth, parsing, error handling easily   |
+| **Cleaner Code**       | Less boilerplate than plain Node HTTP module        |
+| **Scalability**        | Organize routes with Router objects for large apps  |
+| **Extensible**         | Integrates with many npm packages                   |
+| **Faster Development** | Less code, more productivity for APIs and web apps  |
+
+- advantages of react 
+| Advantage                        | Explanation                                                       |
+| -------------------------------- | ----------------------------------------------------------------- |
+| **Reusable Components**          | Components can be reused across the app, saving development time. |
+| **Virtual DOM**                  | Improves performance by updating only changed parts of the UI.    |
+| **Fast Rendering**               | Efficient updates using diffing algorithm; good for large apps.   |
+| **Unidirectional Data Flow**     | Predictable data flow makes debugging easier.                     |
+| **Strong Community & Ecosystem** | Many libraries, tutorials, and tools available.                   |
+| **SEO Friendly**                 | React can render on the server (Server-Side Rendering).           |
+| **JSX Syntax**                   | Combines HTML and JS, making code more readable.                  |
+| **Easy Integration**             | Can integrate with other frameworks or libraries.                 |
+
+- Building blocks of react 
+
+| Building Block            | Purpose                          |
+| ------------------------- | -------------------------------- |
+| **Components**            | Reusable UI building blocks      |
+| **JSX**                   | HTML-like syntax inside JS       |
+| **Props**                 | Read-only input for components   |
+| **State**                 | Component’s dynamic data         |
+| **Event Handling**        | Respond to user actions          |
+| **Lifecycle / Hooks**     | Manage side effects and updates  |
+| **Virtual DOM**           | Efficient rendering              |
+| **Conditional Rendering** | Render based on conditions       |
+| **Lists & Keys**          | Render dynamic lists efficiently |
+
+- React Router React Router: A library to handle routing in React SPAs.Need for React Router: Enables multiple views, dynamic URLs, and navigation without full page reloads.
+
+| Advantage                          | Explanation                                        |
+| ---------------------------------- | -------------------------------------------------- |
+| **SPA Routing**                    | Navigate between views without refreshing the page |
+| **Dynamic Routes**                 | Pass parameters in URL like `/users/:id`           |
+| **Nested Routes**                  | Render child components inside parent routes       |
+| **Browser History**                | Supports forward/back navigation                   |
+| **Conditional & Protected Routes** | Render routes based on user roles or login status  |
+
+- API Routes: Server endpoints that handle requests and send responses to the frontend.
+
+Purpose: Fetch or manipulate data, separate frontend and backend logic, enable SPAs, and handle authentication/authorization.
+
+- advantages of next.js 
+
+| Feature                          | Benefit                                         |
+| -------------------------------- | ----------------------------------------------- |
+| SSR & SSG                        | Fast, SEO-friendly pages                        |
+| API Routes                       | Build backend endpoints without separate server |
+| File-based Routing               | Easy to manage routes                           |
+| Automatic Code Splitting         | Faster page load                                |
+| Image & Performance Optimization | Built-in `<Image>` component and optimizations  |
+
+| Feature                | SSR                              | SSG                 | ISR                                       |
+| ---------------------- | -------------------------------- | ------------------- | ----------------------------------------- |
+| When HTML is generated | On every request                 | At build time       | At build + revalidated periodically       |
+| Speed                  | Slower (server work per request) | Fast (static)       | Fast (static with updates)                |
+| Freshness              | Always fresh                     | Stale until rebuild | Semi-fresh (depends on `revalidate`)      |
+| Use Case               | Dynamic dashboards               | Blogs, docs         | News sites, blogs with occasional updates |
+
+- csr vs ssr
+
+| Feature                 | CSR                        | SSR                                   |
+| ----------------------- | -------------------------- | ------------------------------------- |
+| Where HTML is generated | Browser (client)           | Server                                |
+| Initial page load       | Slower (JS must execute)   | Faster (pre-rendered HTML)            |
+| SEO                     | Poor (unless pre-rendered) | Excellent                             |
+| Interactivity           | Full SPA experience        | Needs hydration for interactivity     |
+| Server load             | Lower                      | Higher (server renders per request)   |
+| Use Case                | SPAs, dashboards           | Blogs, e-commerce, SEO-critical pages |
+
+- template vs layout 
+
+| Feature            | Layout                                              | Template                                      |
+| ------------------ | --------------------------------------------------- | --------------------------------------------- |
+| Mount behavior     | Persistent (doesn’t unmount across page navigation) | Re-renders on every navigation                |
+| State preservation | ✅ Keeps state                                       | ❌ Resets state                                |
+| Use case           | Navbars, sidebars, consistent UI                    | Pages requiring fresh render (forms, wizards) |
+| Example file       | `layout.js`                                         | `template.js`                                 |
+
+| Feature                | getStaticProps (SSG)         | getServerSideProps (SSR)              |
+| ---------------------- | ---------------------------- | ------------------------------------- |
+| When HTML is generated | Build time                   | On every request                      |
+| Performance            | Fast (served as static HTML) | Slower (server rendering per request) |
+| Freshness              | Static, can use ISR          | Always fresh                          |
+| Use Case               | Blogs, docs, landing pages   | Dashboards, dynamic user pages        |
+| Revalidation           | Optional (`revalidate`)      | Not needed, always fresh              |
+
+
+| Option       | Scope           | Pros                  | Cons                        |
+| ------------ | --------------- | --------------------- | --------------------------- |
+| Global CSS   | Whole app       | Simple                | Can conflict                |
+| CSS Modules  | Component       | Scoped, safe          | Requires import             |
+| Styled JSX   | Component       | Scoped, dynamic       | Inline syntax               |
+| CSS-in-JS    | Component       | Theming, dynamic      | Adds JS bundle              |
+| Tailwind CSS | Utility classes | Fast, responsive      | Class-heavy JSX             |
+| Sass/SCSS    | Global / Module | Variables, nesting    | Needs compilation           |
+| UI Framework | Component       | Pre-built, consistent | Learning curve, bundle size |
+
+| Optimization           | How it helps                   |
+| ---------------------- | ------------------------------ |
+| SSG (`getStaticProps`) | Fastest page load              |
+| ISR                    | Static pages + updated content |
+| Image Optimization     | Smaller images → faster load   |
+| Dynamic Imports        | Smaller JS bundle              |
+| Prefetch Links         | Instant navigation             |
+| CDN & Caching          | Global fast delivery           |
+| Fonts Optimization     | Prevent layout shifts          |
+| Reduce JS payload      | Smaller bundles, faster        |
+| React memo/hooks       | Prevent unnecessary re-renders |
