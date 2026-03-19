@@ -348,3 +348,23 @@ console.log(removeDuplicates([1,2,3,4,5,5,6,7,8,9,9]))
 const today = new Date();
 console.log(today)
 
+const myName =  () =>console.log("sazid")
+
+myName()
+
+//  understanding maps 
+const k = [1,2,3,4,5]
+const res = k.map(x => x * 2)
+console.log(res)
+
+const res2 = k.forEach(x => console.log(x * 2)) // for each does not return anything
+
+const result2 = k.filter(x => x % 2 === 0) // filter returns a new array with elements that satisfy the condition
+console.log(result2)
+
+const result3 = k.reduce((acc, curr) => acc + curr, 0) // reduce returns a single value by applying a function to an accumulator and each element in the array
+
+console.log(result3)
+
+const result4 = k.find(x => x > 3) // find returns the first element that satisfies the condition
+console.log(result4)
