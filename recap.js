@@ -114,11 +114,11 @@ console.log(parseFloat(totalNums.toFixed(1)))
 
 console.log(Math.pow(num1, 2))
 
-console.log(40+"40")
+console.log(40 + "40")
 
-console.log(40-"40")
+console.log(40 - "40")
 
-console.log(40-"40a")
+console.log(40 - "40a")
 
 console.log(Number("30"))
 
@@ -163,9 +163,9 @@ if (!null) console.log("null is falsy");
 if (!undefined) console.log("undefined is falsy");
 if (!NaN) console.log("NaN is falsy");
 
-console.log(true+1)
+console.log(true + 1)
 
-console.log(false+1)
+console.log(false + 1)
 
 let dumbarray = [1, 2, 3, 4, 5];
 
@@ -193,15 +193,15 @@ console.log(stringArray.join(" khabo "))
 
 // fo of loop 
 
-for(const str of stringArray) {
+for (const str of stringArray) {
     console.log(str)
 } // gives the value of the array
 
-for(const index in stringArray) {
+for (const index in stringArray) {
     console.log(index)
 } // gives the index of the array
 
-for (let num =0; num < 5; num++) {
+for (let num = 0; num < 5; num++) {
     console.log(num)
 }
 
@@ -222,7 +222,7 @@ const book = " Chemistry"
 console.log(sub.toLocaleLowerCase() === book.toLocaleLowerCase().trim());
 
 const sentence = "The quick brown fox jumps over the lazy dog.";
- 
+
 console.log(sentence.split(" ")) // if we split each and  every becomes array
 
 
@@ -238,7 +238,7 @@ console.log(firstName.concat(" ", lastName)); // Output: John Doe
 
 const sentence1 = "The quick brown fox jumps over the lazy dog.";
 
-for (const letter of sentence1){
+for (const letter of sentence1) {
     console.log(letter)
 }
 
@@ -246,7 +246,7 @@ for (const letter of sentence1){
 let reverseString = "";
 
 
-for (const letter of sentence1){
+for (const letter of sentence1) {
     reverseString = letter + reverseString;
 }
 console.log(reverseString);
@@ -287,12 +287,12 @@ const numberts_asc = numbers.sort((a, b) => a - b);
 
 console.log(numberts_asc)
 
-function add (a,b){
+function add(a, b) {
 
     return a + b;
 }
 
-console.log(add(1,2))
+console.log(add(1, 2))
 
 // number string, boolean null undefined -> primitive 
 //  array object function -> non primitive  data type
@@ -314,11 +314,11 @@ console.log(isLeapYear(2020));
 
 // calculate the avg of odd numbers in  an array 
 
-function oddAvg (arr){
+function oddAvg(arr) {
     let newArr = []
-    let sum = 0 ;
-    for (arrElements of arr){
-        if(arrElements % 2 === 1){
+    let sum = 0;
+    for (arrElements of arr) {
+        if (arrElements % 2 === 1) {
             newArr.push(arrElements)
             sum += arrElements
         }
@@ -326,15 +326,15 @@ function oddAvg (arr){
     return sum / newArr.length;
 }
 
-console.log(oddAvg([1,2,3,4,5,6,7,8,9]))
+console.log(oddAvg([1, 2, 3, 4, 5, 6, 7, 8, 9]))
 
 
 // remove duplicates from an array 
 
-function removeDuplicates(arr){
+function removeDuplicates(arr) {
     let uniqueArr = [];
-    for (arrElement of arr){
-        if(uniqueArr.includes(arrElement) === false){
+    for (arrElement of arr) {
+        if (uniqueArr.includes(arrElement) === false) {
             uniqueArr.push(arrElement)
         }
     }
@@ -343,17 +343,17 @@ function removeDuplicates(arr){
 
 }
 
-console.log(removeDuplicates([1,2,3,4,5,5,6,7,8,9,9]))
+console.log(removeDuplicates([1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 9]))
 
 const today = new Date();
 console.log(today)
 
-const myName =  () =>console.log("sazid")
+const myName = () => console.log("sazid")
 
 myName()
 
 //  understanding maps 
-const k = [1,2,3,4,5]
+const k = [1, 2, 3, 4, 5]
 const res = k.map(x => x * 2)
 console.log(res)
 
@@ -368,3 +368,132 @@ console.log(result3)
 
 const result4 = k.find(x => x > 3) // find returns the first element that satisfies the condition
 console.log(result4)
+
+
+//  class and object 
+class Vehicle {
+    // constructor runs automatically when `new Vehicle(...)` is called.
+    // It initializes each new object with starting values (make, model, year).
+    constructor(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    // method 
+    move() {
+        console.log(`${this.make} ${this.model} is moving.`);
+    }
+}
+
+// Bus class extends Vehicle - defined outside, not nested inside
+class Bus extends Vehicle {
+    constructor(make, model, year, capacity) {
+        super(make, model, year); // Call the parent class constructor
+        this.capacity = capacity;
+    }
+}
+
+class Truck extends Vehicle {
+    constructor(make, model, year, payload) {
+        super(make, model, year); // Call the parent class constructor
+        this.payload = payload;
+    }
+}
+
+const vehicle = new Vehicle("Generic", "Vehicle", 2020);
+console.log(vehicle);
+vehicle.move();
+
+
+//  classes 
+
+class Animal1 {
+  // constructor runs when you do: new Animal(...)
+  constructor(name, sound) {
+    this.name  = name;   // instance property
+    this.sound = sound;
+  }
+
+  // method — shared via prototype (not copied to each instance)
+  speak() {
+    return `${this.name} says ${this.sound}!`;
+  }
+
+  // static method — called on the class, not an instance
+  static kingdom() { return 'Animalia'; }
+}
+
+const dog = new Animal1('Rex', 'Woof');
+dog.speak();            // → 'Rex says Woof!'
+Animal1.kingdom();      // → 'Animalia'
+dog.kingdom;           // → undefined (static ≠ instance)
+
+
+class Animal {
+  constructor(name) { this.name = name; }
+  speak() { return `${this.name} makes a sound.`; }
+}
+
+class Dog extends Animal {
+  // Dog inherits speak() automatically
+  fetch() { return `${this.name} fetches the ball!`; }
+}
+
+const d = new Dog('Rex');
+d.speak();   // inherited from Animal
+d.fetch();   // own method
+
+//  inheritance
+
+// class Animal {
+//   constructor(name) { this.name = name; }
+//   speak() { return `${this.name} makes a sound.`; }
+// }
+
+// class Dog extends Animal {
+//   // Dog inherits speak() automatically
+//   fetch() { return `${this.name} fetches the ball!`; }
+// }
+
+// const d = new Dog('Rex');
+// d.speak();   // inherited from Animal
+// d.fetch();   // own method
+
+
+// super method 
+
+// class Animal {
+//   speak() { return '...'; }
+// }
+
+// class Dog extends Animal {
+//   speak() {
+//     const base = super.speak();  // call parent method
+//     return `${base} Woof!`;
+//   }
+// }
+
+// const d = new Dog();
+// d.speak();
+
+// polymorphism
+
+class Shape {
+  area() { return 0; }
+  describe() { return `Area = ${this.area()}`; }
+}
+
+class Circle extends Shape {
+  constructor(r) { super(); this.r = r; }
+  area() { return +(Math.PI * this.r ** 2).toFixed(2); }
+}
+
+class Rectangle extends Shape {
+  constructor(w, h) { super(); this.w=w; this.h=h; }
+  area() { return this.w * this.h; }
+}
+
+// Polymorphism in action — same interface, different results
+const shapes = [new Circle(5), new Rectangle(4, 6)];
+shapes.forEach(s => console.log(s.describe()));
