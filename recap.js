@@ -497,3 +497,50 @@ class Rectangle extends Shape {
 // Polymorphism in action — same interface, different results
 const shapes = [new Circle(5), new Rectangle(4, 6)];
 shapes.forEach(s => console.log(s.describe()));
+
+
+// truthy values 
+// true, any number (except 0), any non-empty string, any object, any array, and the boolean value true itself are all considered truthy in JavaScript. '0', 'false', and [] are also truthy.
+
+// falsy values 
+// false, 0, -0, 0n (BigInt zero), "", null, undefined, and NaN are all considered falsy in JavaScript.
+
+
+// callback function
+
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+}
+
+// Example of using a callback function
+function processUser(name, callback) {
+    callback(name);
+}
+
+processUser("Alice", greet);
+
+
+// pass by value and pass by reference
+
+let x = 10; // primitive type (number)
+let y = x;
+y = 20; // changing y does not affect x
+console.log(x);
+
+let obj1 = { name: "Alice" }; // non-primitive type (object)
+let obj2 = obj1;
+obj2.name = "Bob"; // changing obj2 also changes obj1
+console.log(obj1.name);
+
+//  how to stop it?
+let obj3 = { name: "Charlie" };
+let obj4 = { ...obj3 };
+console.log(obj4.name); // → "Charlie"
+
+
+// in case of nested objects, we need to do deep copy
+let obj5 = { name: "Dave", address: { city: "New York" } };
+let obj6 = JSON.parse(JSON.stringify(obj5));
+console.log(obj6.name); // → "Dave"
+console.log(obj6.address.city); // → "New York"
+console.log(obj5.name)
