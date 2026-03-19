@@ -293,3 +293,58 @@ function add (a,b){
 }
 
 console.log(add(1,2))
+
+// number string, boolean null undefined -> primitive 
+//  array object function -> non primitive  data type
+
+//  using const we can not change the values but manipulate values of object and array 
+
+
+// check leap year or not 
+
+function isLeapYear(year) {
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        return true; // It's a leap year
+    } else {
+        return false; // Not a leap year
+    }
+}
+
+console.log(isLeapYear(2020));
+
+// calculate the avg of odd numbers in  an array 
+
+function oddAvg (arr){
+    let newArr = []
+    let sum = 0 ;
+    for (arrElements of arr){
+        if(arrElements % 2 === 1){
+            newArr.push(arrElements)
+            sum += arrElements
+        }
+    }
+    return sum / newArr.length;
+}
+
+console.log(oddAvg([1,2,3,4,5,6,7,8,9]))
+
+
+// remove duplicates from an array 
+
+function removeDuplicates(arr){
+    let uniqueArr = [];
+    for (arrElement of arr){
+        if(uniqueArr.includes(arrElement) === false){
+            uniqueArr.push(arrElement)
+        }
+    }
+
+    return uniqueArr;
+
+}
+
+console.log(removeDuplicates([1,2,3,4,5,5,6,7,8,9,9]))
+
+const today = new Date();
+console.log(today)
+
