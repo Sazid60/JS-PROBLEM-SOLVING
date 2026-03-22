@@ -540,7 +540,10 @@ console.log(obj4.name); // → "Charlie"
 
 // in case of nested objects, we need to do deep copy
 let obj5 = { name: "Dave", address: { city: "New York" } };
-let obj6 = JSON.parse(JSON.stringify(obj5));
-console.log(obj6.name); // → "Dave"
-console.log(obj6.address.city); // → "New York"
-console.log(obj5.name)
+let obj6 = JSON.stringify(obj5);
+let obj7 = JSON.parse(obj6);
+console.log(obj6)
+console.log(obj7)
+// console.log(obj6.name); // → "Dave"
+// console.log(obj6.address.city); // → "New York"
+// console.log(obj5.name)
